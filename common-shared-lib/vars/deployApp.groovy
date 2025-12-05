@@ -1,5 +1,5 @@
-def call(String serviceName) {
-    stage("Deploy Service") {
-        sh "kubectl apply -f deployment.yaml"
-    }
+def call(String imageName) {
+    echo "🚀 Deploying Docker Image: "
+    sh "docker pull "
+    sh "docker run -d -p 5000:5000 "
 }

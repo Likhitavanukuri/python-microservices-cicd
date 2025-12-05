@@ -1,5 +1,5 @@
 def call(String imageName) {
-    echo "🚀 Deploying container from local image: ${imageName}"
+    echo "🚀 Deploying container using image: ${imageName}"
 
     sh """
         echo Stopping old container if exists...

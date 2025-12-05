@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE = "docker.io/vanukurilikhita/${env.JOB_NAME}"
+        IMAGE = "docker.io/vanukurilikhita/${env.JOB_NAME}:latest"
     }
 
     stages {
@@ -21,7 +21,7 @@ pipeline {
         }
 
         stage("Docker Build") {
-            steps { dockerBuild(IMAGE) }
+            steps { dockerBuild IMAGE }
         }
 
         stage("Deploy") {
@@ -29,3 +29,4 @@ pipeline {
         }
     }
 }
+

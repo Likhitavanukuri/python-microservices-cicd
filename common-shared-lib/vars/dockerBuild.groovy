@@ -4,6 +4,5 @@ def call(String tag) {
     sh """
         cd ${env.JOB_NAME}
         podman build -t ${tag} .
-        podman tag ${tag} ${tag}:latest
     """
 }

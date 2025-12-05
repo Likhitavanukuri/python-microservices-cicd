@@ -1,5 +1,8 @@
 def call(String imageName) {
-    echo "🚀 Deploying Docker Image: "
-    sh "docker pull "
-    sh "docker run -d -p 5000:5000 "
+    echo "🚀 Deploying Docker Image: ${imageName}"
+
+    sh """
+        docker pull ${imageName}
+        docker run -d -p 4001:4001 ${imageName}
+    """
 }

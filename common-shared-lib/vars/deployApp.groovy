@@ -1,5 +1,6 @@
 def call(String imageName) {
     echo "🚀 Deploying container using image: ${imageName}"
+    echo "🔥 Shared Library Updated Successfully!"
 
     // Determine port based on service name
     def port = "4001"  // default for greeting-service

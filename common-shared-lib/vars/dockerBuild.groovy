@@ -3,6 +3,6 @@ def call(String tag) {
 
     sh """
         cd ${env.JOB_NAME}
-        docker build -t ${tag} .
+        podman build -t ${tag} .
     """
 }

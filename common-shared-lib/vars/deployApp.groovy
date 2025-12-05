@@ -9,12 +9,12 @@ def call(String imageName) {
 
     sh """
         echo Stopping old container if exists...
-        docker stop ${env.JOB_NAME} || true
+        podman stop ${env.JOB_NAME} || true
 
         echo Removing old container...
-        docker rm ${env.JOB_NAME} || true
+        podman rm ${env.JOB_NAME} || true
 
         echo Running new container on port ${port}...
-        docker run -d --name ${env.JOB_NAME} -p ${port}:${port} ${imageName}
+        podman run -d --name ${env.JOB_NAME} -p ${port}:${port} ${imageName}
     """
 }

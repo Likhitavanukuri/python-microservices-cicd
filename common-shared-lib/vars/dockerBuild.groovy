@@ -1,7 +1,8 @@
-def call(imageName) {
-    echo "🚧 Building Docker Image: "
+def call(String imageName) {
+    echo "🚧 Building Docker Image: ${imageName}"
+
     sh """
         cd greeting-service
-        docker build -t  .
+        docker build -t ${imageName} .
     """
 }

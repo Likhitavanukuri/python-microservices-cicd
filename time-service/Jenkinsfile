@@ -25,7 +25,7 @@ pipeline {
         }
 
         stage("Deploy") {
-            steps { deployApp("${env.JOB_NAME}") }
+            steps { deployApp(IMAGE) }
         }
     }
 }

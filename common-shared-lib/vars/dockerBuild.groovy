@@ -1,8 +1,8 @@
-def call(String imageName) {
-    echo "🚧 Building Docker Image: ${imageName}"
+def call(String tag) {
+    echo "🚧 Building Docker Image: ${tag}"
 
     sh """
-        cd greeting-service
-        docker build -t ${imageName} .
+        cd ${env.JOB_NAME}
+        docker build -t ${tag} .
     """
 }

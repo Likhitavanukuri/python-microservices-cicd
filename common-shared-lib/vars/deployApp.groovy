@@ -2,14 +2,13 @@ def call(String imageName) {
     echo "🚀 Deploying container from local image: ${imageName}"
 
     sh """
-        echo "Stopping old container if exists..."
-        docker stop greeting || true
+        echo Stopping old container if exists...
+        docker stop ${env.JOB_NAME} || true
 
-        echo "Removing old container..."
-        docker rm greeting || true
+        echo Removing old container...
+        docker rm ${env.JOB_NAME} || true
 
-        echo "Running new container..."
-        docker run -d --name greeting -p 4001:4001 ${imageName}
+        echo Running new container...
+        docker run -d --name ${env.JOB_NAME} -p 4002:4002 ${imageName}
     """
 }
-

@@ -1,5 +1,8 @@
 def call() {
     stage("Build") {
-        sh "pip install --break-system-packages -r requirements.txt"
+        sh """
+            cd \${env.JOB_NAME}
+            pip install --break-system-packages -r requirements.txt
+        """
     }
 }
